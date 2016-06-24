@@ -18,3 +18,11 @@ site-lisp/adventur-mode
 /ensime/elpa/
 backups/
 auto-save-list
+.recentf
+.smex-items
+ac-comphist.dat
+cider-history
+ido.last
+places
+projectile-bookmarks.eld
+smex-items
