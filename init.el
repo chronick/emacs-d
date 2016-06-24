@@ -16,8 +16,9 @@
 
 
 (defvar package-list '(better-defaults ; because why not
-                       paredit ; an elegant weapon, for a civilized age
-                       clojure-mode ; dragon as fuck
+                       paredit ; an elegant weapon, for a more civilized age
+                       lispy ; because that elegant weapon gives me carpal tunnel
+                       clojure-mode ; because we're dragon as fuck
                        clojure-mode-extra-font-locking ; better clojure syntax highlighting
                        cider ; Clojure REPLs
                        auto-complete ;)
@@ -79,11 +80,12 @@
 
 (defun lisp-minor-modes ()
   (paredit-mode)
+  (lispy-mode)
   (rainbow-delimiters-mode)
-  (paren-activate)
- )
+  (paren-activate))
 
 (global-linum-mode t)
+(* (+ 2) (- 3) (+ 3 (* 4 (- 7) (+ 8))))
 ;(sublimity-mode 1)
 
 ; Hooks
@@ -92,11 +94,13 @@
 (add-hook 'shell-mode-hook 'shell-stuff)
 
 ; keybindings
-(global-set-key (kbd "C-;") 'toggle-comment-on-line)
-(global-set-key (kbd "M-x") 'smex)
+;; (global-set-key (kbd "C-;") 'toggle-comment-on-line)
+(global-set-1 key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-x") 'smex-major-mode-commands)
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 (global-set-key (kbd "C-j") 'cider-eval-print-last-exp)
+
+(+ (- 3) (* 2 3) 4)
 
 (add-to-list 'exec-path (concat (getenv "HOME") "/bin"))
 
@@ -107,7 +111,7 @@
 
 ;; Add a directory to our load path so that when you `load` things
 ;; below, Emacs knows where to look for the corresponding file.
-(add-to-list 'load-path "~/.emacs.d/customizations")
+(add-to-list 'load-path "~/.emacs.d/config")
 
 ;; Sets up exec-path-from-shell so that Emacs will use the correct
 ;; environment variables
